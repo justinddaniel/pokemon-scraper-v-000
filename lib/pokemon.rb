@@ -15,6 +15,7 @@ class Pokemon
   end
 
   def self.find(id, db)
+    binding.pry
     new_pokemon_name = db.execute("SELECT name FROM pokemon WHERE id = ?",id)
     new_pokemon_type = db.execute("SELECT type FROM pokemon WHERE id = ?",id)
     new_pokemon = Pokemon.new(id, new_pokemon_name, new_pokemon_type)
