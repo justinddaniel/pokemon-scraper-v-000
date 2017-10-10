@@ -2,4 +2,4 @@ ALTER TABLE pokemon
 ADD hp INTEGER;
 
 UPDATE pokemon
-SET hp = 60 WHERE id IN;
+SET hp = 60;
