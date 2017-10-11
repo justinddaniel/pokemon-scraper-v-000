@@ -1,7 +1,7 @@
 require 'pry'
 class Pokemon
 
-  attr_reader :id, :name, :type, :db, :hp
+  attr_accessor :id, :name, :type, :db, :hp
 
   def initialize(id = nil, name = nil, type = nil, db = nil)
     @id = id
@@ -22,6 +22,6 @@ class Pokemon
   end
 
   def alter_hp(mod_hp, db)
-    db.execute("UPDATE pokemon SET hp = ? WHERE id = ?",mod_hp, @id)
+    db.execute("UPDATE pokemon SET hp = ? WHERE id = ?",mod_hp, self.id)
   end
 end
